@@ -1,0 +1,9 @@
+.main-container {
+    background-color: #e2dfdf;
+    border:5px solid #898a8d;
+    padding:50px;
+    margin: 80px;
+}
+.sheets-container {
+    border-left:2px solid #1f0000;
+}
