@@ -4,10 +4,11 @@ import 'react-notifications/lib/notifications.css';
 import 'react-activity/dist/react-activity.css';
 import './App.css';
 
-function App() {
-    return (
-                <Router/>
 
+function App() {
+
+    return (
+        <Router/>
     );
 }
 

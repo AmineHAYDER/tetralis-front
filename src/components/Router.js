@@ -1,11 +1,20 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import Main from "./Main";
 import TokenHandler from "../lib/TokenHandler";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import {NotificationContainer} from 'react-notifications';
+import {useDispatch} from 'react-redux'
+import {loginGoogle} from "../redux/Actions";
 
-function router() {
 
+function Routes() {
+    const dispatch = useDispatch()
+    useEffect(() => {
+        const token = localStorage.getItem('oath2_token')
+        if (token) {
+            dispatch(loginGoogle(token))
+        }
+    }, [])
     return (
         <Router>
                 <NotificationContainer/>
@@ -19,4 +28,4 @@ function router() {
     );
 }
 
-export default router;
+export default Routes;

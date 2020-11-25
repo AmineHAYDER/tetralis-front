@@ -3,15 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {Provider} from "react-redux";
+import configureStore from "./redux/configureStore";
 
-import AppDataProvider from './context/application'
-
+export const store = configureStore();
 
 ReactDOM.render(
     <React.StrictMode>
-        <AppDataProvider>
+        <Provider store={store}>
             <App/>
-        </AppDataProvider>
+        </Provider>
     </React.StrictMode>,
     document.getElementById('root')
 );
